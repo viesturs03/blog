@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechInsights - Professional Developer Blog</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #f59e0b;
+            --accent-color: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page {
+            display: none;
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(24px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 5rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.05"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+
+        .blog-card-image {
+            position: relative;
+            overflow: hidden;
+            height: 240px;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(37, 99, 235, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .read-more:hover {
+            color: var(--primary-dark);
+            transform: translateX(4px);
+        }
+
+        /* About Page */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .about-content {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: -2rem auto 4rem;
+            max-width: 800px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .profile-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .about-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .about-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .about-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        /* Blog Post Detail */
+        .post-detail {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin: 2rem 0;
+        }
+
+        .post-hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .post-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 3rem;
+            color: white;
+        }
+
+        .post-category-badge {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .post-content {
+            padding: 3rem;
+        }
+
+        .post-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .post-content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .post-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .back-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-content, .post-content {
+                padding: 2rem;
+            }
+
+            .post-content h1 {
+                font-size: 2rem;
+            }
+
+            .post-hero-overlay {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card {
+                margin: 0 -8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <div class="logo-icon">T</div>
+                TechInsights
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')" class="active">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Exploring the Future of Technology</h1>
+                        <p class="subtitle">Deep insights from conferences, innovative hackathons, and the vibrant tech community that's shaping tomorrow's digital landscape.</p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Articles</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">25+</span>
+                                <span class="stat-label">Events Covered</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">10K+</span>
+                                <span class="stat-label">Readers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="blog-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Latest Insights</h2>
+                        <p class="section-subtitle">Stay updated with the latest trends, technologies, and insights from the ever-evolving world of software development and tech innovation.</p>
+                    </div>
+
+                    <div class="blog-grid">
+                        <article class="blog-card" onclick="showPost('post1')">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop" alt="React Conference">
+                                <div class="blog-category">Frontend</div>
+                            </div>
+                            <div class="blog-card-content">
+                                <h3>React Summit 2024: The Future of Frontend Development</h3>
+                                <div class="blog-meta">
+                                    <span class="blog-date">📅 March 15, 2024</span>
+                                    <span class="blog-read-time">⏱ 8 min read</span>
+                                </div>
+                                <p>Exploring cutting-edge React innovations, concurrent features, and the latest architectural patterns that are reshaping modern frontend development.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" onclick="showPost('post2')">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="AI Meetup">
+                                <div class="blog-category">AI/ML</div>
+                            </div>
+                            <div class="blog-card-content">
+                                <h3>Machine Learning in Practice: Local AI Meetup Insights</h3>
+                                <div class="blog-meta">
+                                    <span class="blog-date">📅 February 28, 2024</span>
+                                    <span class="blog-read-time">⏱ 6 min read</span>
+                                </div>
+                                <p>Real-world applications of machine learning, from computer vision to natural language processing, shared by industry practitioners.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" onclick="showPost('post3')">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop" alt="DevOps Conference">
+                                <div class="blog-category">DevOps</div>
+                            </div>
+                            <div class="blog-card-content">
+                                <h3>DevOps Days: Cloud-Native Architecture Revolution</h3>
+                                <div class="blog-meta">
+                                    <span class="blog-date">📅 January 20, 2024</span>
+                                    <span class="blog-read-time">⏱ 7 min read</span>
+                                </div>
+                                <p>Key insights from industry leaders on modern DevOps practices, containerization, and the shift to cloud-native architectures.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" onclick="showPost('post4')">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop" alt="Hackathon">
+                                <div class="blog-category">Innovation</div>
+                            </div>
+                            <div class="blog-card-content">
+                                <h3>48-Hour Innovation: TechCrunch Disrupt Hackathon Journey</h3>
+                                <div class="blog-meta">
+                                    <span class="blog-date">📅 December 10, 2023</span>
+                                    <span class="blog-read-time">⏱ 10 min read</span>
+                                </div>
+                                <p>Building a groundbreaking fintech solution from concept to prototype in just 48 hours, with lessons learned from intense collaboration.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" onclick="showPost('post5')">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop" alt="Tech Networking">
+                                <div class="blog-category">Community</div>
+                            </div>
+                            <div class="blog-card-content">
+                                <h3>Startup Ecosystem: Building Tomorrow's Technology</h3>
+                                <div class="blog-meta">
+                                    <span class="blog-date">📅 November 18, 2023</span>
+                                    <span class="blog-read-time">⏱ 5 min read</span>
+                                </div>
+                                <p>Connecting with innovative startups and exploring emerging technologies that are reshaping the local and global tech landscape.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" onclick="showPost('post6')">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Web Development">
+                                <div class="blog-category">Web Dev</div>
+                            </div>
+                            <div class="blog-card-content">
+                                <h3>Modern Web Architecture: Performance & Scalability</h3>
+                                <div class="blog-meta">
+                                    <span class="blog-date">📅 October 25, 2023</span>
+                                    <span class="blog-read-time">⏱ 9 min read</span>
+                                </div>
+                                <p>Exploring advanced web development patterns, performance optimization techniques, and scalable architecture design principles.</p>
+                                <a href="#" class="read-more">Read More →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <section class="about-hero">
+                <div class="container">
+                    <h1>About TechInsights</h1>
+                    <p class="subtitle">Passionate about technology, innovation, and sharing knowledge with the developer community.</p>
+                </div>
+            </section>
+
+            <div class="container">
+                <div class="about-content">
+                    <div class="profile-section">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Profile Picture" class="profile-img">
+                        <div class="profile-info">
+                            <h1>Alex Johnson</h1>
+                            <div class="profile-role">Senior Full-Stack Developer & Tech Writer</div>
+                            <div class="profile-social">
+                                <a href="#" class="social-link">🐦</a>
+                                <a href="#" class="social-link">💼</a>
+                                <a href="#" class="social-link">🐙</a>
+                                <a href="#" class="social-link">📧</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h2>My Journey</h2>
+                        <p>With over 8 years of experience in software development, I've had the privilege of working with startups, scale-ups, and enterprise companies across various industries. My passion lies in exploring cutting-edge technologies and sharing insights with the developer community through conferences, meetups, and hackathons.</p>
+                        
+                        <p>I believe that the best way to stay current in our rapidly evolving field is through continuous learning and active participation in the tech community. This blog serves as a platform to document my experiences, share learnings, and contribute to the collective knowledge of fellow
+                        
+                        <p>I believe that the best way to stay current in our rapidly evolving field is through continuous learning and active participation in the tech community. This blog serves as a platform to document my experiences, share learnings, and contribute to the collective knowledge of fellow developers and tech enthusiasts.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>What I Do</h2>
+                        <p>As a Senior Full-Stack Developer, I specialize in modern web technologies including React, Node.js, TypeScript, and cloud-native architectures. I'm particularly passionate about:</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>Frontend architecture and performance optimization</li>
+                            <li>Machine learning integration in web applications</li>
+                            <li>DevOps practices and CI/CD pipeline design</li>
+                            <li>Mentoring junior developers and fostering inclusive tech communities</li>
+                        </ul>
+                        <p>Beyond my day job, I actively contribute to open-source projects and regularly speak at local meetups and conferences about emerging technologies and best practices in software development.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Why TechInsights?</h2>
+                        <p>The tech industry moves at lightning speed, and staying informed can be overwhelming. Through TechInsights, I aim to distill complex technical concepts into accessible insights, share real-world experiences from conferences and hackathons, and highlight the human stories behind technological innovation.</p>
+                        <p>Whether you're a seasoned developer, a tech enthusiast, or someone curious about the future of technology, you'll find valuable perspectives here that go beyond the typical technical documentation.</p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Let's Connect</h2>
+                        <p>I'm always excited to connect with fellow developers, entrepreneurs, and tech enthusiasts. Feel free to reach out if you'd like to discuss technology, share ideas, or explore potential collaborations. You can find me at various tech events around the city or connect with me through the social links above.</p>
+                        <p>Have a topic you'd like me to cover or an event you think I should attend? I'd love to hear your suggestions!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post Detail Pages -->
+        <div id="post1" class="page">
+            <div class="container">
+                <button class="back-btn" onclick="showPage('home')">← Back to Blog</button>
+                <article class="post-detail">
+                    <div class="post-hero">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=400&fit=crop" alt="React Conference">
+                        <div class="post-hero-overlay">
+                            <span class="post-category-badge">Frontend</span>
+                            <h1>React Summit 2024: The Future of Frontend Development</h1>
+                            <div class="post-meta">
+                                <span>📅 March 15, 2024</span>
+                                <span>⏱ 8 min read</span>
+                                <span>👤 Alex Johnson</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>The React Summit 2024 was nothing short of extraordinary. As one of the premier frontend development conferences, it brought together over 3,000 developers, designers, and tech leaders from around the globe to explore the cutting-edge innovations shaping the future of React and frontend development.</p>
+
+                        <h2>Concurrent Features Take Center Stage</h2>
+                        <p>The most significant highlight was the deep dive into React's concurrent features. The React team demonstrated how Suspense, concurrent rendering, and automatic batching are revolutionizing how we think about user experience and performance optimization.</p>
+                        
+                        <p>What struck me most was the practical demonstration of how these features can dramatically improve perceived performance without requiring major architectural changes to existing applications. The speaker showed a real-world e-commerce application where implementing Suspense reduced loading states by 40% and improved user engagement metrics significantly.</p>
+
+                        <h2>Server Components Revolution</h2>
+                        <p>Server Components emerged as a game-changer for full-stack React applications. The ability to render components on the server while maintaining client-side interactivity opens up new possibilities for performance optimization and SEO.</p>
+                        
+                        <p>During the hands-on workshop, we built a blog application using Server Components, and the results were impressive. The initial page load was 60% faster compared to traditional client-side rendering, while maintaining the dynamic user experience we expect from modern React applications.</p>
+
+                        <h2>Key Takeaways</h2>
+                        <p>The conference reinforced several important trends in frontend development that every React developer should be aware of. The shift towards more granular rendering control, the importance of Core Web Vitals in user experience, and the growing integration of AI-powered development tools are reshaping how we approach frontend architecture.</p>
+                        
+                        <p>Perhaps most importantly, the community aspect was incredible. Networking with developers from diverse backgrounds and industries provided insights that you simply can't get from online resources alone. The hallway conversations were just as valuable as the formal presentations.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Additional post pages would follow the same pattern -->
+        <div id="post2" class="page">
+            <div class="container">
+                <button class="back-btn" onclick="showPage('home')">← Back to Blog</button>
+                <article class="post-detail">
+                    <div class="post-hero">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=400&fit=crop" alt="AI Meetup">
+                        <div class="post-hero-overlay">
+                            <span class="post-category-badge">AI/ML</span>
+                            <h1>Machine Learning in Practice: Local AI Meetup Insights</h1>
+                            <div class="post-meta">
+                                <span>📅 February 28, 2024</span>
+                                <span>⏱ 6 min read</span>
+                                <span>👤 Alex Johnson</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Last night's AI meetup at the local tech hub was a fascinating exploration of how machine learning is being applied in real-world scenarios. With over 150 attendees, including data scientists, developers, and ML engineers, the energy was palpable as we delved into practical applications that are making a difference today.</p>
+
+                        <h2>Computer Vision in Healthcare</h2>
+                        <p>The evening's first presentation focused on a groundbreaking computer vision project being used in local hospitals for early detection of skin cancer. The ML model, trained on over 100,000 dermatological images, has achieved 94% accuracy in identifying potentially malignant lesions.</p>
+                        
+                        <p>What made this particularly compelling was the speaker's emphasis on the ethical considerations and the importance of maintaining human oversight in medical AI applications. The technology augments rather than replaces medical expertise, providing doctors with additional insights to make more informed decisions.</p>
+
+                        <h2>NLP for Customer Service</h2>
+                        <p>The second session showcased how natural language processing is transforming customer service operations. A local e-commerce company shared their implementation of a multilingual chatbot that handles 70% of customer inquiries without human intervention.</p>
+                        
+                        <p>The technical deep-dive revealed interesting challenges around context understanding and sentiment analysis. Their solution involved fine-tuning a transformer model on domain-specific customer service conversations, resulting in significantly better performance than generic NLP models.</p>
+
+                        <h2>The Future is Collaborative</h2>
+                        <p>The most valuable insight from the meetup was the emphasis on collaborative AI development. The most successful ML projects involved close collaboration between domain experts, data scientists, and software engineers from the very beginning of the project lifecycle.</p>
+                        
+                        <p>This reinforced my belief that the future of AI isn't about replacing human expertise, but about creating powerful human-AI partnerships that leverage the strengths of both.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Continue with additional posts... -->
+        
+    </main>
+
+    <script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (pageId === 'home' || pageId.startsWith('post')) {
+                document.querySelector('.nav-links a[onclick*="home"]').classList.add('active');
+            } else {
+                document.querySelector('.nav-links a[onclick*="' + pageId + '"]').classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showPost(postId) {
+            showPage(postId);
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Add smooth animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.blog-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>    
