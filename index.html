@@ -348,13 +348,7 @@
             color: var(--text-light);
         }
 
-        .blog-date {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .blog-read-time {
+        .blog-info {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -437,9 +431,10 @@
         }
 
         .social-link {
-            width: 40px;
+            min-width: 40px;
             height: 40px;
-            border-radius: 50%;
+            padding: 0 16px;
+            border-radius: 12px;
             background: var(--bg-tertiary);
             display: flex;
             align-items: center;
@@ -447,6 +442,9 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
         .social-link:hover {
@@ -674,8 +672,8 @@
     <header id="header">
         <nav class="container">
             <a href="#" class="logo" onclick="showPage('home')">
-                <div class="logo-icon">T</div>
-                TechInsights
+                <div class="logo-icon">VV</div>
+                Viesturs Veidmanis
             </a>
             <ul class="nav-links">
                 <li><a href="#" onclick="showPage('home')" class="active">Home</a></li>
@@ -720,14 +718,15 @@
                     <div class="blog-grid">
                         <article class="blog-card" onclick="showPost('post1')">
                             <div class="blog-card-image">
-                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop" alt="React Conference">
-                                <div class="blog-category">Frontend</div>
+                                <img src="assets/images/hack2.jpeg" alt="React Conference">
+                                <div class="blog-category">Problem solving</div>
                             </div>
                             <div class="blog-card-content">
-                                <h3>React Summit 2024: The Future of Frontend Development</h3>
+                                <h3>Hack the Future!</h3>
                                 <div class="blog-meta">
-                                    <span class="blog-date">📅 March 15, 2024</span>
-                                    <span class="blog-read-time">⏱ 8 min read</span>
+                                    <span class="blog-info">📅 November 19, 2024</span>
+                                    <span class="blog-info">🖋️ Hackathon</span>
+                                    <span class="blog-info">📌 Antwerp</span>
                                 </div>
                                 <p>Exploring cutting-edge React innovations, concurrent features, and the latest architectural patterns that are reshaping modern frontend development.</p>
                                 <a href="#" class="read-more">Read More →</a>
@@ -736,14 +735,15 @@
 
                         <article class="blog-card" onclick="showPost('post2')">
                             <div class="blog-card-image">
-                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="AI Meetup">
-                                <div class="blog-category">AI/ML</div>
+                                <img src="assets/images/t3.0.jpeg" alt="AI Meetup">
+                                <div class="blog-category">Blue Team Security</div>
                             </div>
                             <div class="blog-card-content">
-                                <h3>Machine Learning in Practice: Local AI Meetup Insights</h3>
+                                <h3>TryHackMe</h3>
                                 <div class="blog-meta">
-                                    <span class="blog-date">📅 February 28, 2024</span>
-                                    <span class="blog-read-time">⏱ 6 min read</span>
+                                    <span class="blog-info">📅 February 25, 2025</span>
+                                    <span class="blog-info">🖋️ Tech&Meet</span>
+                                    <span class="blog-info">📌 Howest Campus Brugge</span>
                                 </div>
                                 <p>Real-world applications of machine learning, from computer vision to natural language processing, shared by industry practitioners.</p>
                                 <a href="#" class="read-more">Read More →</a>
@@ -752,14 +752,15 @@
 
                         <article class="blog-card" onclick="showPost('post3')">
                             <div class="blog-card-image">
-                                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop" alt="DevOps Conference">
-                                <div class="blog-category">DevOps</div>
+                                <img src="assets/images/t1.0.jpeg" alt="DevOps Conference">
+                                <div class="blog-category">Investigating cybercrime: on the frontline</div>
                             </div>
                             <div class="blog-card-content">
-                                <h3>DevOps Days: Cloud-Native Architecture Revolution</h3>
+                                <h3>Belgian Cyber Command</h3>
                                 <div class="blog-meta">
-                                    <span class="blog-date">📅 January 20, 2024</span>
-                                    <span class="blog-read-time">⏱ 7 min read</span>
+                                    <span class="blog-info">📅 November 12, 2024</span>
+                                    <span class="blog-info">🖋️ Tech&Meet</span>
+                                    <span class="blog-info">📌 Howest Campus Brugge</span>
                                 </div>
                                 <p>Key insights from industry leaders on modern DevOps practices, containerization, and the shift to cloud-native architectures.</p>
                                 <a href="#" class="read-more">Read More →</a>
@@ -768,52 +769,22 @@
 
                         <article class="blog-card" onclick="showPost('post4')">
                             <div class="blog-card-image">
-                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop" alt="Hackathon">
-                                <div class="blog-category">Innovation</div>
+                                <img src="assets/images/t2.0.jpeg" alt="Hackathon">
+                                <div class="blog-category">SRE</div>
                             </div>
                             <div class="blog-card-content">
-                                <h3>48-Hour Innovation: TechCrunch Disrupt Hackathon Journey</h3>
+                                <h3>Site Reliability Engineering</h3>
                                 <div class="blog-meta">
-                                    <span class="blog-date">📅 December 10, 2023</span>
-                                    <span class="blog-read-time">⏱ 10 min read</span>
+                                    <span class="blog-info">📅 December 4, 2024</span>
+                                    <span class="blog-info">🖋️ Tech&Meet</span>
+                                    <span class="blog-info">📌 Howest Campus Brugge</span>
                                 </div>
                                 <p>Building a groundbreaking fintech solution from concept to prototype in just 48 hours, with lessons learned from intense collaboration.</p>
                                 <a href="#" class="read-more">Read More →</a>
                             </div>
                         </article>
 
-                        <article class="blog-card" onclick="showPost('post5')">
-                            <div class="blog-card-image">
-                                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop" alt="Tech Networking">
-                                <div class="blog-category">Community</div>
-                            </div>
-                            <div class="blog-card-content">
-                                <h3>Startup Ecosystem: Building Tomorrow's Technology</h3>
-                                <div class="blog-meta">
-                                    <span class="blog-date">📅 November 18, 2023</span>
-                                    <span class="blog-read-time">⏱ 5 min read</span>
-                                </div>
-                                <p>Connecting with innovative startups and exploring emerging technologies that are reshaping the local and global tech landscape.</p>
-                                <a href="#" class="read-more">Read More →</a>
-                            </div>
-                        </article>
-
-                        <article class="blog-card" onclick="showPost('post6')">
-                            <div class="blog-card-image">
-                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Web Development">
-                                <div class="blog-category">Web Dev</div>
-                            </div>
-                            <div class="blog-card-content">
-                                <h3>Modern Web Architecture: Performance & Scalability</h3>
-                                <div class="blog-meta">
-                                    <span class="blog-date">📅 October 25, 2023</span>
-                                    <span class="blog-read-time">⏱ 9 min read</span>
-                                </div>
-                                <p>Exploring advanced web development patterns, performance optimization techniques, and scalable architecture design principles.</p>
-                                <a href="#" class="read-more">Read More →</a>
-                            </div>
-                        </article>
-                    </div>
+                        
                 </div>
             </section>
         </div>
@@ -822,58 +793,54 @@
         <div id="about" class="page">
             <section class="about-hero">
                 <div class="container">
-                    <h1>About TechInsights</h1>
-                    <p class="subtitle">Passionate about technology, innovation, and sharing knowledge with the developer community.</p>
+                    <h1>About Me</h1>
+                    <p class="subtitle">Passionate about cybersecurity and innovative development</p>
                 </div>
             </section>
-
+    
             <div class="container">
                 <div class="about-content">
                     <div class="profile-section">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Profile Picture" class="profile-img">
+                        <img src="assets/images/p2.jpeg" alt="Profile Picture" class="profile-img">
                         <div class="profile-info">
-                            <h1>Alex Johnson</h1>
-                            <div class="profile-role">Senior Full-Stack Developer & Tech Writer</div>
+                            <h1>Viesturs Veidmanis</h1>
+                            <div class="profile-role">
+                                <p>Cybersecurity Student & Application Developer</p>
+                            </div>
                             <div class="profile-social">
-                                <a href="#" class="social-link">🐦</a>
-                                <a href="#" class="social-link">💼</a>
-                                <a href="#" class="social-link">🐙</a>
-                                <a href="#" class="social-link">📧</a>
+                                <a href="#" class="social-link">CV</a>
+                                <a href="#" class="social-link">Recommendation letter</a>
+                                <a href="https://www.linkedin.com/in/viesturs-veidmanis-750829254/" class="social-link">LinkedIn</a>
                             </div>
                         </div>
                     </div>
-                    
+                        
                     <div class="about-section">
-                        <h2>My Journey</h2>
-                        <p>With over 8 years of experience in software development, I've had the privilege of working with startups, scale-ups, and enterprise companies across various industries. My passion lies in exploring cutting-edge technologies and sharing insights with the developer community through conferences, meetups, and hackathons.</p>
-                        
-                        <p>I believe that the best way to stay current in our rapidly evolving field is through continuous learning and active participation in the tech community. This blog serves as a platform to document my experiences, share learnings, and contribute to the collective knowledge of fellow
-                        
-                        <p>I believe that the best way to stay current in our rapidly evolving field is through continuous learning and active participation in the tech community. This blog serves as a platform to document my experiences, share learnings, and contribute to the collective knowledge of fellow developers and tech enthusiasts.</p>
+                        <h2>About Me</h2>
+                        <p>I'm an undergraduate student at Howest University of Applied Sciences studying Cybersecurity, with a strong passion for developing innovative security solutions. While I'm still growing in the field, I'm a quick learner who thrives in fast-paced environments and brings adaptability, teamwork, and attention to detail to everything I do.</p>
+                            
+                        <p>Currently, I'm working as an intern at SYBA in Brugge, Belgium, where I focus on research and development of security features for mobile cybersecurity applications. One of my most exciting achievements has been contributing to a unique security function that's currently being patented by the company - a testament to the innovative work we're doing together.</p>
                     </div>
 
                     <div class="about-section">
-                        <h2>What I Do</h2>
-                        <p>As a Senior Full-Stack Developer, I specialize in modern web technologies including React, Node.js, TypeScript, and cloud-native architectures. I'm particularly passionate about:</p>
+                        <h2>Technical Expertise</h2>
+                        <p>My technical journey spans multiple programming languages and platforms. I have expert-level proficiency in Swift for native iOS development and am highly skilled in JavaScript and TypeScript for both mobile and desktop applications. I've mastered the Electron Framework for building robust cross-platform desktop applications and have extensive experience with React Native.</p>
+                            
+                        <p>In the cybersecurity domain, I specialize in mobile security, audits, threat analysis, penetration testing, and implementing security policies. I also have deep technical knowledge of iOS Network Extensions and strong command of the Microsoft Azure environment, particularly in model training and cloud storage management.</p>
+                            
+                        <p>My programming experience includes:</p>
                         <ul style="margin: 1rem 0; padding-left: 2rem; color: var(--text-secondary); line-height: 1.8;">
-                            <li>Frontend architecture and performance optimization</li>
-                            <li>Machine learning integration in web applications</li>
-                            <li>DevOps practices and CI/CD pipeline design</li>
-                            <li>Mentoring junior developers and fostering inclusive tech communities</li>
+                            <li>Programming languages: Python, Visual Basic, C#, JavaScript, TypeScript, HTML, CSS, Java, SQL, Swift, Kotlin</li>
+                            <li>Creative skills: Blender for 3D modeling</li>
+                            <li>Certifications: Python and VBA from DATORIUM, AI Prompt Engineering from RUN EU MOOC</li>
                         </ul>
-                        <p>Beyond my day job, I actively contribute to open-source projects and regularly speak at local meetups and conferences about emerging technologies and best practices in software development.</p>
                     </div>
 
                     <div class="about-section">
-                        <h2>Why TechInsights?</h2>
-                        <p>The tech industry moves at lightning speed, and staying informed can be overwhelming. Through TechInsights, I aim to distill complex technical concepts into accessible insights, share real-world experiences from conferences and hackathons, and highlight the human stories behind technological innovation.</p>
-                        <p>Whether you're a seasoned developer, a tech enthusiast, or someone curious about the future of technology, you'll find valuable perspectives here that go beyond the typical technical documentation.</p>
-                    </div>
-
-                    <div class="about-section">
-                        <h2>Let's Connect</h2>
-                        <p>I'm always excited to connect with fellow developers, entrepreneurs, and tech enthusiasts. Feel free to reach out if you'd like to discuss technology, share ideas, or explore potential collaborations. You can find me at various tech events around the city or connect with me through the social links above.</p>
-                        <p>Have a topic you'd like me to cover or an event you think I should attend? I'd love to hear your suggestions!</p>
+                        <h2>Professional Experience</h2>
+                        <p>My work experience has taught me valuable lessons in time management, teamwork, and working under pressure. From my time as a factory worker at SIA LIGNA Project, where I developed precision and workflow efficiency skills, to my role as a shop employee at LIDL during a store launch, I've learned to adapt quickly and solve problems effectively.</p>
+                            
+                        <p>At SYBA, I work with a diverse international team in a cross-cultural, remote work setting, which has strengthened my communication skills and cultural awareness. My collaborative approach and ability to motivate peers to deliver at their highest potential have been recognized by my colleagues and supervisors.</p>
                     </div>
                 </div>
             </div>
@@ -885,14 +852,14 @@
                 <button class="back-btn" onclick="showPage('home')">← Back to Blog</button>
                 <article class="post-detail">
                     <div class="post-hero">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=400&fit=crop" alt="React Conference">
+                        <img src="assets/images/hack1.jpeg" alt="React Conference">
                         <div class="post-hero-overlay">
-                            <span class="post-category-badge">Frontend</span>
-                            <h1>React Summit 2024: The Future of Frontend Development</h1>
+                            <span class="post-category-badge">Problem solving</span>
+                            <h1>Hack the Future</h1>
                             <div class="post-meta">
-                                <span>📅 March 15, 2024</span>
-                                <span>⏱ 8 min read</span>
-                                <span>👤 Alex Johnson</span>
+                                <span>📅 November 19, 2024</span>
+                                <span>🖋️ Hackathon</span>
+                                <span>📌 Antwerp</span>
                             </div>
                         </div>
                     </div>
@@ -917,21 +884,20 @@
                 </article>
             </div>
         </div>
-
-        <!-- Additional post pages would follow the same pattern -->
         <div id="post2" class="page">
             <div class="container">
                 <button class="back-btn" onclick="showPage('home')">← Back to Blog</button>
                 <article class="post-detail">
                     <div class="post-hero">
-                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=400&fit=crop" alt="AI Meetup">
+                        <img src="assets/images/t3.0.jpeg" alt="AI Meetup">
                         <div class="post-hero-overlay">
-                            <span class="post-category-badge">AI/ML</span>
+                            <span class="post-category-badge">TryHackMe</span>
                             <h1>Machine Learning in Practice: Local AI Meetup Insights</h1>
                             <div class="post-meta">
-                                <span>📅 February 28, 2024</span>
-                                <span>⏱ 6 min read</span>
-                                <span>👤 Alex Johnson</span>
+                                <span>📅 February 25, 2025</span>
+                                <span>🖋️ Tech&Meet</span>
+                                <span>📌 Howest Campus Brugge</span>
+                                <span>👤 Niels Deryckere</span>
                             </div>
                         </div>
                     </div>
@@ -957,7 +923,82 @@
             </div>
         </div>
 
-        <!-- Continue with additional posts... -->
+        <div id="post3" class="page">
+            <div class="container">
+                <button class="back-btn" onclick="showPage('home')">← Back to Blog</button>
+                <article class="post-detail">
+                    <div class="post-hero">
+                        <img src="assets/images/t1.0.jpeg" alt="AI Meetup">
+                        <div class="post-hero-overlay">
+                            <span class="post-category-badge">Belgian Cyber Command</span>
+                            <h1>Investigating cybercrime: on the frontline</h1>
+                            <div class="post-meta">
+                                <span class="blog-info">📅 November 12, 2024</span>
+                                <span class="blog-info">🖋️ Tech&Meet</span>
+                                <span class="blog-info">📌 Howest Campus Brugge</span>
+                                <span class="blog-info">👤 Colonel Godefridis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Last night's AI meetup at the local tech hub was a fascinating exploration of how machine learning is being applied in real-world scenarios. With over 150 attendees, including data scientists, developers, and ML engineers, the energy was palpable as we delved into practical applications that are making a difference today.</p>
+
+                        <h2>Computer Vision in Healthcare</h2>
+                        <p>The evening's first presentation focused on a groundbreaking computer vision project being used in local hospitals for early detection of skin cancer. The ML model, trained on over 100,000 dermatological images, has achieved 94% accuracy in identifying potentially malignant lesions.</p>
+                        
+                        <p>What made this particularly compelling was the speaker's emphasis on the ethical considerations and the importance of maintaining human oversight in medical AI applications. The technology augments rather than replaces medical expertise, providing doctors with additional insights to make more informed decisions.</p>
+
+                        <h2>NLP for Customer Service</h2>
+                        <p>The second session showcased how natural language processing is transforming customer service operations. A local e-commerce company shared their implementation of a multilingual chatbot that handles 70% of customer inquiries without human intervention.</p>
+                        
+                        <p>The technical deep-dive revealed interesting challenges around context understanding and sentiment analysis. Their solution involved fine-tuning a transformer model on domain-specific customer service conversations, resulting in significantly better performance than generic NLP models.</p>
+
+                        <h2>The Future is Collaborative</h2>
+                        <p>The most valuable insight from the meetup was the emphasis on collaborative AI development. The most successful ML projects involved close collaboration between domain experts, data scientists, and software engineers from the very beginning of the project lifecycle.</p>
+                        
+                        <p>This reinforced my belief that the future of AI isn't about replacing human expertise, but about creating powerful human-AI partnerships that leverage the strengths of both.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="post4" class="page">
+            <div class="container">
+                <button class="back-btn" onclick="showPage('home')">← Back to Blog</button>
+                <article class="post-detail">
+                    <div class="post-hero">
+                        <img src="assets/images/t2.3.png" alt="AI Meetup">
+                        <div class="post-hero-overlay">
+                            <span class="post-category-badge">SRE</span>
+                            <h1>Site Reliability Engineering</h1>
+                            <div class="post-meta">
+                                <span class="blog-info">📅 December 4, 2024</span>
+                                <span class="blog-info">🖋️ Tech&Meet</span>
+                                <span class="blog-info">📌 Howest Campus Brugge</span>
+                                <span class="blog-info">👤 Stefaan V. and Tijl Van den Broeck</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Last night's AI meetup at the local tech hub was a fascinating exploration of how machine learning is being applied in real-world scenarios. With over 150 attendees, including data scientists, developers, and ML engineers, the energy was palpable as we delved into practical applications that are making a difference today.</p>
+
+                        <h2>Computer Vision in Healthcare</h2>
+                        <p>The evening's first presentation focused on a groundbreaking computer vision project being used in local hospitals for early detection of skin cancer. The ML model, trained on over 100,000 dermatological images, has achieved 94% accuracy in identifying potentially malignant lesions.</p>
+                        
+                        <p>What made this particularly compelling was the speaker's emphasis on the ethical considerations and the importance of maintaining human oversight in medical AI applications. The technology augments rather than replaces medical expertise, providing doctors with additional insights to make more informed decisions.</p>
+
+                        <h2>NLP for Customer Service</h2>
+                        <p>The second session showcased how natural language processing is transforming customer service operations. A local e-commerce company shared their implementation of a multilingual chatbot that handles 70% of customer inquiries without human intervention.</p>
+                        
+                        <p>The technical deep-dive revealed interesting challenges around context understanding and sentiment analysis. Their solution involved fine-tuning a transformer model on domain-specific customer service conversations, resulting in significantly better performance than generic NLP models.</p>
+
+                        <h2>The Future is Collaborative</h2>
+                        <p>The most valuable insight from the meetup was the emphasis on collaborative AI development. The most successful ML projects involved close collaboration between domain experts, data scientists, and software engineers from the very beginning of the project lifecycle.</p>
+                        
+                        <p>This reinforced my belief that the future of AI isn't about replacing human expertise, but about creating powerful human-AI partnerships that leverage the strengths of both.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
         
     </main>
 
