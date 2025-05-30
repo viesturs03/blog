@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechInsights - Professional Developer Blog</title>
+    <title>Viesturs Veimdanis Blog</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
@@ -543,7 +543,7 @@
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 2rem;
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: white;
         }
 
         .post-content h2 {
@@ -688,21 +688,14 @@
             <section class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h1>Exploring the Future of Technology</h1>
-                        <p class="subtitle">Deep insights from conferences, innovative hackathons, and the vibrant tech community that's shaping tomorrow's digital landscape.</p>
+                        <h1>My Journey into the Broad Tech World</h1>
+                        <p class="subtitle">Insights from conferences, innovative hackathons, and the vibrant tech community that's shaping tomorrow's digital landscape.</p>
                         <div class="hero-stats">
                             <div class="stat">
-                                <span class="stat-number">50+</span>
+                                <span class="stat-number">4</span>
                                 <span class="stat-label">Articles</span>
                             </div>
-                            <div class="stat">
-                                <span class="stat-number">25+</span>
-                                <span class="stat-label">Events Covered</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">10K+</span>
-                                <span class="stat-label">Readers</span>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -743,7 +736,7 @@
                                 <div class="blog-meta">
                                     <span class="blog-info">📅 February 25, 2025</span>
                                     <span class="blog-info">🖋️ Tech&Meet</span>
-                                    <span class="blog-info">📌 Howest Campus Brugge</span>
+                                    <span class="blog-info">📌 Brugge</span>
                                 </div>
                                 <p>Real-world applications of machine learning, from computer vision to natural language processing, shared by industry practitioners.</p>
                                 <a href="#" class="read-more">Read More →</a>
@@ -760,7 +753,7 @@
                                 <div class="blog-meta">
                                     <span class="blog-info">📅 November 12, 2024</span>
                                     <span class="blog-info">🖋️ Tech&Meet</span>
-                                    <span class="blog-info">📌 Howest Campus Brugge</span>
+                                    <span class="blog-info">📌 Brugge</span>
                                 </div>
                                 <p>Key insights from industry leaders on modern DevOps practices, containerization, and the shift to cloud-native architectures.</p>
                                 <a href="#" class="read-more">Read More →</a>
@@ -777,7 +770,7 @@
                                 <div class="blog-meta">
                                     <span class="blog-info">📅 December 4, 2024</span>
                                     <span class="blog-info">🖋️ Tech&Meet</span>
-                                    <span class="blog-info">📌 Howest Campus Brugge</span>
+                                    <span class="blog-info">📌 Brugge</span>
                                 </div>
                                 <p>Building a groundbreaking fintech solution from concept to prototype in just 48 hours, with lessons learned from intense collaboration.</p>
                                 <a href="#" class="read-more">Read More →</a>
@@ -808,8 +801,8 @@
                                 <p>Cybersecurity Student & Application Developer</p>
                             </div>
                             <div class="profile-social">
-                                <a href="#" class="social-link">CV</a>
-                                <a href="#" class="social-link">Recommendation letter</a>
+                                <a href="assets/pdfs/cv.pdf" target="_blank" rel="noopener noreferrer" class="social-link">CV</a>
+                                <a href="assets/pdfs/rl.pdf" target="_blank" rel="noopener noreferrer" class="social-link">Recommendation letter</a>
                                 <a href="https://www.linkedin.com/in/viesturs-veidmanis-750829254/" class="social-link">LinkedIn</a>
                             </div>
                         </div>
@@ -864,22 +857,18 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>The React Summit 2024 was nothing short of extraordinary. As one of the premier frontend development conferences, it brought together over 3,000 developers, designers, and tech leaders from around the globe to explore the cutting-edge innovations shaping the future of React and frontend development.</p>
-
-                        <h2>Concurrent Features Take Center Stage</h2>
-                        <p>The most significant highlight was the deep dive into React's concurrent features. The React team demonstrated how Suspense, concurrent rendering, and automatic batching are revolutionizing how we think about user experience and performance optimization.</p>
+                        <h2>First Hackathon Experience: Building a Local Code Security Scanner</h2>
+                        <p>Last weekend, my friend Redas and I participated in our first-ever hackathon at HOWEST Hogeschool West-Vlaanderen — an intense, fast-paced challenge where participants were tasked with developing and shipping a working application within a tight timeframe. Despite some last-minute Docker issues that prevented us from fully shipping the app, the experience was a rewarding deep dive into secure coding and real-world development under pressure.</p>
                         
-                        <p>What struck me most was the practical demonstration of how these features can dramatically improve perceived performance without requiring major architectural changes to existing applications. The speaker showed a real-world e-commerce application where implementing Suspense reduced loading states by 40% and improved user engagement metrics significantly.</p>
+                        <h2>Security Scanner with a Local-First Approach</h2>
+                        <p>Our project centered around a simple but powerful idea: a lightweight code vulnerability scanner that respects user privacy. In many organizations, security concerns prevent teams from uploading sensitive code to third-party platforms. We tackled this head-on by creating a tool that runs entirely locally, allowing developers to scan their own codebases without ever sending data externally.</p>
+                        <p>The scanner parses source code and checks it against a customizable set of security rules designed to detect common vulnerabilities such as SQL injection (SQLi) and cross-site scripting (XSS). We built in several default rule packages, but the real flexibility lies in the user’s ability to modify or extend these to fit their specific environment or tech stack.</p>
 
-                        <h2>Server Components Revolution</h2>
-                        <p>Server Components emerged as a game-changer for full-stack React applications. The ability to render components on the server while maintaining client-side interactivity opens up new possibilities for performance optimization and SEO.</p>
+                        <h2>Overcoming Technical Challenges</h2>
+                        <p>While we completed the application’s core functionality, we hit unexpected roadblocks when it came time to containerize and ship it via Docker. These issues reminded us of a critical lesson in software development: shipping is a feature too. Even though we didn’t fully deploy the app, the process of debugging and adapting under time constraints pushed us both outside of our comfort zones and into a space of accelerated learning.</p>
                         
-                        <p>During the hands-on workshop, we built a blog application using Server Components, and the results were impressive. The initial page load was 60% faster compared to traditional client-side rendering, while maintaining the dynamic user experience we expect from modern React applications.</p>
-
-                        <h2>Key Takeaways</h2>
-                        <p>The conference reinforced several important trends in frontend development that every React developer should be aware of. The shift towards more granular rendering control, the importance of Core Web Vitals in user experience, and the growing integration of AI-powered development tools are reshaping how we approach frontend architecture.</p>
-                        
-                        <p>Perhaps most importantly, the community aspect was incredible. Networking with developers from diverse backgrounds and industries provided insights that you simply can't get from online resources alone. The hallway conversations were just as valuable as the formal presentations.</p>
+                        <h2>Hackathons Are Just the Beginning</h2>
+                        <p>The most valuable part of the hackathon wasn’t just the project itself — it was the experience of collaborating under pressure, tackling new technologies, and learning to adapt quickly. It confirmed for us that the best way to grow as developers is to build, break things, and keep iterating.</p>
                     </div>
                 </article>
             </div>
@@ -892,7 +881,7 @@
                         <img src="assets/images/t3.0.jpeg" alt="AI Meetup">
                         <div class="post-hero-overlay">
                             <span class="post-category-badge">TryHackMe</span>
-                            <h1>Machine Learning in Practice: Local AI Meetup Insights</h1>
+                            <h1>Blue team security</h1>
                             <div class="post-meta">
                                 <span>📅 February 25, 2025</span>
                                 <span>🖋️ Tech&Meet</span>
@@ -902,22 +891,41 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>Last night's AI meetup at the local tech hub was a fascinating exploration of how machine learning is being applied in real-world scenarios. With over 150 attendees, including data scientists, developers, and ML engineers, the energy was palpable as we delved into practical applications that are making a difference today.</p>
+                        <h2>Hands-On Learning with TryHackMe: A Session with Niels Deryckere</h2>
 
-                        <h2>Computer Vision in Healthcare</h2>
-                        <p>The evening's first presentation focused on a groundbreaking computer vision project being used in local hospitals for early detection of skin cancer. The ML model, trained on over 100,000 dermatological images, has achieved 94% accuracy in identifying potentially malignant lesions.</p>
-                        
-                        <p>What made this particularly compelling was the speaker's emphasis on the ethical considerations and the importance of maintaining human oversight in medical AI applications. The technology augments rather than replaces medical expertise, providing doctors with additional insights to make more informed decisions.</p>
+                        <p>On February 25, 2025, we had the pleasure of attending an insightful and highly interactive session with Niels Deryckere — a dedicated cybersecurity professional currently working as a Content Engineer and Cyber Security Researcher at <strong>TryHackMe</strong>.</p>
 
-                        <h2>NLP for Customer Service</h2>
-                        <p>The second session showcased how natural language processing is transforming customer service operations. A local e-commerce company shared their implementation of a multilingual chatbot that handles 70% of customer inquiries without human intervention.</p>
-                        
-                        <p>The technical deep-dive revealed interesting challenges around context understanding and sentiment analysis. Their solution involved fine-tuning a transformer model on domain-specific customer service conversations, resulting in significantly better performance than generic NLP models.</p>
+                        <h2>Meet the Speaker: Niels Deryckere</h2>
 
-                        <h2>The Future is Collaborative</h2>
-                        <p>The most valuable insight from the meetup was the emphasis on collaborative AI development. The most successful ML projects involved close collaboration between domain experts, data scientists, and software engineers from the very beginning of the project lifecycle.</p>
-                        
-                        <p>This reinforced my belief that the future of AI isn't about replacing human expertise, but about creating powerful human-AI partnerships that leverage the strengths of both.</p>
+                        <p>Niels brings a diverse background to the cybersecurity field. He previously worked as a Cyber Threat Intelligence (CTI) analyst for the CCB, as well as a Security Analyst at Itineris. Before entering the cybersecurity industry, he was a teacher — a background that clearly informs his approach to creating accessible and educational content.</p>
+
+                        <p>He holds several respected industry certifications, including:</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>GCTI (GIAC Cyber Threat Intelligence)</li>
+                            <li>GSEC (GIAC Security Essentials)</li>
+                            <li>GCIH (GIAC Certified Incident Handler)</li>
+                            <li>CCNA (Cisco Certified Network Associate)</li>
+                            <li>Recorded Future Certified Analyst</li>
+                            <li>OSCP (Offensive Security Certified Professional – ongoing)</li>
+                        </ul>
+
+                        <h2>Making Cybersecurity Accessible with TryHackMe</h2>
+
+                        <p>Throughout the session, Niels emphasized the importance of continuous learning in cybersecurity — a field that evolves faster than most. He highlighted how platforms like TryHackMe offer a unique blend of theory and practical, hands-on exercises that help learners stay current and sharp, especially in blue team roles focused on defense and detection.</p>
+
+                        <p>Unlike traditional learning environments, TryHackMe encourages users to learn by doing, simulating real-world scenarios where users can safely explore and respond to incidents in a virtual lab environment. This approach not only boosts technical skill but also builds confidence — something that’s crucial when transitioning into a cybersecurity role.</p>
+
+                        <h2>Key Takeaways from the Session</h2>
+
+                        <ul style="margin: 1rem 0; padding-left: 2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>Cybersecurity is a lifelong learning journey — staying updated is part of the job.</li>
+                            <li>TryHackMe offers structured learning paths that cater to both beginners and experienced professionals.</li>
+                            <li>Certifications are valuable, but applied knowledge and practical skills make the difference in real-world roles.</li>
+                            <li>Community and knowledge-sharing are powerful tools in growing as a professional.</li>
+                        </ul>
+
+                        <p>This session was both inspiring and practical, especially for those looking to break into the industry or expand their skill set. Huge thanks to Niels for sharing his journey and giving us a closer look at how tools like TryHackMe are making cybersecurity education more inclusive and effective.</p>
+
                     </div>
                 </article>
             </div>
@@ -941,22 +949,37 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>Last night's AI meetup at the local tech hub was a fascinating exploration of how machine learning is being applied in real-world scenarios. With over 150 attendees, including data scientists, developers, and ML engineers, the energy was palpable as we delved into practical applications that are making a difference today.</p>
+                        <h2>Inside Belgian Cyber Command: A Glimpse into Digital Defense</h2>
+                        <p>On December 11, 2024, I attended a fascinating and eye-opening session with Colonel Gunther Godefridis, Director for Development & Readiness at the Belgian Cyber Command. The event offered an in-depth look into how modern warfare has evolved beyond traditional battlegrounds and into cyberspace — where data, systems, and infrastructure have become prime targets.</p>
 
-                        <h2>Computer Vision in Healthcare</h2>
-                        <p>The evening's first presentation focused on a groundbreaking computer vision project being used in local hospitals for early detection of skin cancer. The ML model, trained on over 100,000 dermatological images, has achieved 94% accuracy in identifying potentially malignant lesions.</p>
-                        
-                        <p>What made this particularly compelling was the speaker's emphasis on the ethical considerations and the importance of maintaining human oversight in medical AI applications. The technology augments rather than replaces medical expertise, providing doctors with additional insights to make more informed decisions.</p>
+                        <h2>Defending the Digital Frontlines</h2>
 
-                        <h2>NLP for Customer Service</h2>
-                        <p>The second session showcased how natural language processing is transforming customer service operations. A local e-commerce company shared their implementation of a multilingual chatbot that handles 70% of customer inquiries without human intervention.</p>
-                        
-                        <p>The technical deep-dive revealed interesting challenges around context understanding and sentiment analysis. Their solution involved fine-tuning a transformer model on domain-specific customer service conversations, resulting in significantly better performance than generic NLP models.</p>
+                        <p>As our world becomes increasingly digital, the threats we face are no longer just physical. Disinformation campaigns, cyber espionage, and digital sabotage are now central challenges for national security. Cyber Command Belgium is the nation's answer to this new landscape. Operating at the intersection of technology, intelligence, and defense, the unit plays a critical role in:</p>
 
-                        <h2>The Future is Collaborative</h2>
-                        <p>The most valuable insight from the meetup was the emphasis on collaborative AI development. The most successful ML projects involved close collaboration between domain experts, data scientists, and software engineers from the very beginning of the project lifecycle.</p>
-                        
-                        <p>This reinforced my belief that the future of AI isn't about replacing human expertise, but about creating powerful human-AI partnerships that leverage the strengths of both.</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>Securing Defense’s networks and weapon systems</li>
+                            <li>Conducting intelligence operations in support of the General Intelligence and Security Service (ADIV)</li>
+                            <li>Carrying out offensive and defensive cyber operations</li>
+                            <li>Collaborating with academic, industrial, and civil society partners to strengthen national resilience</li>
+                        </ul>
+
+                        <p>Colonel Godefridis brought over two decades of military experience to the discussion, blending deep strategic insight with technical understanding. His work in artificial intelligence, innovation, and defense strategy underscored the multidisciplinary nature of cyber defense today.</p>
+
+                        <h2>Eligibility Barriers and Reflections</h2>
+
+                        <p>As someone deeply interested in cybersecurity and national defense, I found the session incredibly motivating — but also personally bittersweet. Because I am not a Belgian citizen, I am not eligible to apply for roles within the military or Cyber Command. To even begin the process, I would have to change my nationality and then pass through a rigorous testing and evaluation phase.</p>
+
+                        <p>While that may not be in my immediate future, the talk clarified how vital and complex cyber defense roles are. It’s not just about technical skills — it’s about a commitment to national service, legal eligibility, and being embedded within the framework of a country’s defense ecosystem.</p>
+
+                        <h2>Key Takeaways from the Session</h2>
+
+                        <ul style="margin: 1rem 0; padding-left: 2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>The increasing importance of cross-sector collaboration in cybersecurity: government alone can’t solve these issues.</li>
+                            <li>The role of AI and data-driven technologies in both detecting and launching cyber operations.</li>
+                            <li>The shift in defense priorities from physical borders to digital perimeters — and how nations must adapt.</li>
+                        </ul>
+
+                        <p>Colonel Godefridis's presentation was both inspiring and sobering. It reminded us that while not everyone can serve in the military, there are many ways to contribute to the cybersecurity community through research, education, and ethical hacking initiatives.</p>
                     </div>
                 </article>
             </div>
@@ -966,7 +989,7 @@
                 <button class="back-btn" onclick="showPage('home')">← Back to Blog</button>
                 <article class="post-detail">
                     <div class="post-hero">
-                        <img src="assets/images/t2.3.png" alt="AI Meetup">
+                        <img src="assets/images/t2.4.png" alt="AI Meetup">
                         <div class="post-hero-overlay">
                             <span class="post-category-badge">SRE</span>
                             <h1>Site Reliability Engineering</h1>
@@ -979,22 +1002,30 @@
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>Last night's AI meetup at the local tech hub was a fascinating exploration of how machine learning is being applied in real-world scenarios. With over 150 attendees, including data scientists, developers, and ML engineers, the energy was palpable as we delved into practical applications that are making a difference today.</p>
+                        <h2>Demystifying SRE: Insights from a Google Tech Talk</h2>
+                        <p>In December 2024, I had the opportunity to attend a guest lecture on Site Reliability Engineering (SRE), hosted by two experienced specialists from Google — Mr. Stefaan V. and Mr. Tijl Van den Broeck. The session offered a compelling dive into what SRE really is, how it differs from DevOps, and why it plays such a critical role in modern software infrastructure</p>
 
-                        <h2>Computer Vision in Healthcare</h2>
-                        <p>The evening's first presentation focused on a groundbreaking computer vision project being used in local hospitals for early detection of skin cancer. The ML model, trained on over 100,000 dermatological images, has achieved 94% accuracy in identifying potentially malignant lesions.</p>
-                        
-                        <p>What made this particularly compelling was the speaker's emphasis on the ethical considerations and the importance of maintaining human oversight in medical AI applications. The technology augments rather than replaces medical expertise, providing doctors with additional insights to make more informed decisions.</p>
+                        <h2>What Is SRE, Really?</h2>
+                        <p>SRE — or Site Reliability Engineering — is a discipline that originated at Google, combining software engineering principles with infrastructure and operations to build scalable and highly reliable systems. It was created as a response to a growing need: how can large-scale services be operated reliably without slowing down innovation?</p>
+                        <p>Instead of traditional system administrators managing uptime reactively, SREs use code to automate operations and enforce service-level standards. They don’t just maintain systems — they design them to be resilient and self-healing, often pushing back on unrealistic availability goals to maintain a healthy balance between speed and stability.</p>
 
-                        <h2>NLP for Customer Service</h2>
-                        <p>The second session showcased how natural language processing is transforming customer service operations. A local e-commerce company shared their implementation of a multilingual chatbot that handles 70% of customer inquiries without human intervention.</p>
-                        
-                        <p>The technical deep-dive revealed interesting challenges around context understanding and sentiment analysis. Their solution involved fine-tuning a transformer model on domain-specific customer service conversations, resulting in significantly better performance than generic NLP models.</p>
+                        <h2>SLOs, SLAs, and Error Budgets</h2>
+                        <p>A major focus of the lecture was the framework of Service-Level Objectives (SLOs), Service-Level Agreements (SLAs), and Error Budgets. These concepts help bridge the gap between business expectations and technical reliability.</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li><strong>SLA (Service-Level Agreement):</strong> This is the formal contract with the client. It defines what level of availability or performance they are promised.</li>
+                            <li><strong>SLO (Service-Level Objective):</strong> These are internal targets, typically stricter than SLAs, used to guide engineering decisions.</li>
+                            <li><strong>Error Budget:</strong> This is the allowable margin of failure within the SLO. It’s essentially a buffer that acknowledges perfection isn’t sustainable — and that some failure is okay if it allows for faster iteration and innovation.</li>
+                        </ul>
+                        <p>This approach flips the traditional mindset: instead of striving for 100% uptime, SRE encourages teams to ask, how reliable does this service need to be? It’s a practical philosophy that balances risk and reward.</p>
 
-                        <h2>The Future is Collaborative</h2>
-                        <p>The most valuable insight from the meetup was the emphasis on collaborative AI development. The most successful ML projects involved close collaboration between domain experts, data scientists, and software engineers from the very beginning of the project lifecycle.</p>
-                        
-                        <p>This reinforced my belief that the future of AI isn't about replacing human expertise, but about creating powerful human-AI partnerships that leverage the strengths of both.</p>
+                        <h2>SRE vs DevOps: A Complement, Not a Competitor</h2>
+                        <p>Another key takeaway was the distinction between SRE and DevOps. While both aim to improve collaboration between development and operations, SRE formalizes this with engineering-backed principles and metrics. Where DevOps promotes culture and shared responsibility, SRE operationalizes it with automation, observability, and objective thresholds for success.</p>
+                        <p>In a way, DevOps is the mindset — SRE is the method.</p>
+
+                        <h2>Hands-On Learning and Takeaways</h2>
+                        <p>The lecture ended with a hands-on lab simulating real-world SRE tasks, like responding to incidents and managing error budgets. It was both educational and fun — giving us the chance to “step into the shoes” of an SRE and see how complex systems are kept afloat.</p>
+                        <p>One of the most valuable things I took from this experience was the idea that reliability isn’t just a technical goal — it’s a business-critical feature. SREs are not just engineers; they are stewards of user trust and uptime.</p>
+                        <p>Massive thanks to Mr. Stefaan V. and Mr. Tijl Van den Broeck for this insightful session. It gave me a new lens through which to view system design, and made SRE feel less like a buzzword — and more like the future of responsible engineering.</p>
                     </div>
                 </article>
             </div>
